@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nothing — A study in absence</title>
+<meta name="description" content="Nothing. Precisely engineered. Devastatingly empty." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- WebGL / canvas background -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scroll progress -->
+  <div class="progress-bar" aria-hidden="true"><span></span></div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo" data-magnetic>
+        <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <span>Nothing</span>
+      </a>
+      <nav class="links">
+        <a href="#manifesto" data-magnetic>Manifesto</a>
+        <a href="#object" data-magnetic>The Object</a>
+        <a href="#process" data-magnetic>Process</a>
+        <a href="#essay" data-magnetic>Essay</a>
+        <a href="#contact" data-magnetic>Reach</a>
+      </nav>
+      <button class="cta" data-magnetic>
+        <span>Acquire Nothing</span>
+        <span class="cta-arrow">↗</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="hero-meta">
+      <span class="dot"></span>
+      <span data-scramble>Volume 01 · Edition of None</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word" data-split>Nothing,</span></span>
+      <span class="line"><span class="word" data-split>precisely</span></span>
+      <span class="line italic"><span class="word" data-split>engineered.</span></span>
+    </h1>
+    <p class="hero-sub" data-reveal>
+      A long, unwavering meditation on absence. Calibrated to the seventh decimal.
+      Tuned by hand. Confirmed by no one.
+    </p>
+    <div class="hero-cta">
+      <button class="primary" data-magnetic>
+        <span class="bg"></span>
+        <span class="label">Begin the descent</span>
+      </button>
+      <a href="#manifesto" class="ghost" data-magnetic>↓ Or scroll, gently</a>
+    </div>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="track">
+        <span>Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered · Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered ·</span>
+        <span>Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered · Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered ·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto -->
+  <section id="manifesto" class="manifesto">
+    <div class="section-head">
+      <span class="num" data-reveal>01</span>
+      <h2 data-reveal>A manifesto for the unremarkable.</h2>
+    </div>
+    <div class="manifesto-grid">
+      <p data-reveal>
+        We have made too many things. Too many shapes, too many edges, too many promises uttered into rooms that were already full.
+        Nothing is the inverse practice. We sand it down. We sand the sander.
+      </p>
+      <p data-reveal>
+        Each surface here is a refusal. Each line a long apology to your retinas.
+        The product, should we ever ship it, will be the absence of itself — gift-wrapped, hand-numbered, sent nowhere.
+      </p>
+      <p data-reveal>
+        Nothing is not a brand. Nothing is not a movement. Nothing is, at most, a Tuesday afternoon that forgot to introduce itself.
+      </p>
+    </div>
+  </section>
+
+  <!-- Object showcase -->
+  <section id="object" class="object">
+    <div class="section-head">
+      <span class="num" data-reveal>02</span>
+      <h2 data-reveal>The Object<span class="italic">,</span> as such.</h2>
+    </div>
+
+    <div class="object-stage">
+      <div class="object-shape" data-tilt>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="orb"></div>
+      </div>
+      <div class="object-spec">
+        <ul>
+          <li><span>Material</span><b data-scramble>Ambient air</b></li>
+          <li><span>Finish</span><b data-scramble>Bare attention</b></li>
+          <li><span>Weight</span><b data-scramble>0.000 g</b></li>
+          <li><span>Capacity</span><b data-scramble>Whatever you bring</b></li>
+          <li><span>Origin</span><b data-scramble>An unobserved Tuesday</b></li>
+          <li><span>Edition</span><b data-scramble>1 of ∅</b></li>
+        </ul>
+        <p class="caption" data-reveal>
+          Photographed in a room without light. Calibrated against a wall that was, on reflection, not there.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal scroll process -->
+  <section id="process" class="process">
+    <div class="section-head sticky-head">
+      <span class="num" data-reveal>03</span>
+      <h2 data-reveal>Process<span class="italic">.</span> Or the long way around.</h2>
+    </div>
+
+    <div class="hscroll">
+      <div class="hscroll-track">
+        <article class="card">
+          <span class="card-num">i.</span>
+          <h3>Removal</h3>
+          <p>We begin with a thing and slowly, patiently, take from it. The thing forgives us.</p>
+        </article>
+        <article class="card">
+          <span class="card-num">ii.</span>
+          <h3>Quietening</h3>
+          <p>We turn the volume down on the remaining shapes until they hum at the frequency of forgotten dreams.</p>
+        </article>
+        <article class="card">
+          <span class="card-num">iii.</span>
+          <h3>Calibration</h3>
+          <p>An engineer in a grey shirt squints at a grey number for a grey afternoon. The number does not change. It is correct.</p>
+        </article>
+        <article class="card">
+          <span class="card-num">iv.</span>
+          <h3>Disappearance</h3>
+          <p>The piece is removed from itself. What remains is what was always there, only more so.</p>
+        </article>
+        <article class="card">
+          <span class="card-num">v.</span>
+          <h3>Delivery</h3>
+          <p>Nothing arrives in a box that did not exist. You open it. It opens you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat" data-reveal><b class="count" data-target="0">0</b><span>Decisions made in haste</span></div>
+    <div class="stat" data-reveal><b class="count" data-target="1042">0</b><span>Hours spent staring</span></div>
+    <div class="stat" data-reveal><b class="count" data-target="7">0</b><span>Materials, none chosen</span></div>
+    <div class="stat" data-reveal><b>∞</b><span>Times we changed our minds</span></div>
+  </section>
+
+  <!-- Essay -->
+  <section id="essay" class="essay">
+    <div class="section-head">
+      <span class="num" data-reveal>04</span>
+      <h2 data-reveal>An essay on the absence of essay.</h2>
+    </div>
+    <div class="essay-body">
+      <p data-reveal>
+        There is a particular kind of quiet that arrives only after every other sound has politely excused itself.
+        We are interested in that quiet. We are, perhaps, only interested in that quiet.
+      </p>
+      <p data-reveal>
+        Consider a room. Now consider the room without the room. Now consider what remains, which is, of course, you,
+        and the long fluorescent hum of your own paying attention. That is the work. That is all the work.
+      </p>
+      <blockquote data-reveal>
+        <span class="quote-mark">“</span>
+        To make Nothing is harder than to make Something. Something has demands. Nothing has only its terrible, quiet patience.
+        <span class="quote-mark">”</span>
+        <cite>— a person we did not interview</cite>
+      </blockquote>
+      <p data-reveal>
+        We could go on. In fact, we have been going on, in the next room, for several years now. You are welcome to listen.
+        Bring nothing. We will match it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <h2 data-reveal>
+        <span class="word" data-split>Say</span>
+        <span class="word italic" data-split>nothing,</span>
+        <span class="word" data-split>back.</span>
+      </h2>
+      <p data-reveal>If you must, you may whisper it into the form below. We will not respond. This is the agreement.</p>
+      <form class="form" onsubmit="event.preventDefault(); this.classList.add('sent');">
+        <label>
+          <span>Your name, optional</span>
+          <input type="text" placeholder="—" />
+        </label>
+        <label>
+          <span>Your nothing</span>
+          <textarea rows="4" placeholder="Leave this blank, deliberately."></textarea>
+        </label>
+        <button class="primary" data-magnetic type="submit">
+          <span class="bg"></span>
+          <span class="label">Send into the void</span>
+        </button>
+        <p class="sent-msg">Received. Filed under: nothing.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-logo">Nothing<sup>©</sup></p>
+        <p>An ongoing refusal, since an unspecified date.</p>
+      </div>
+      <div>
+        <p>Studio</p>
+        <p>An empty floor, somewhere quiet.</p>
+      </div>
+      <div>
+        <p>Index</p>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#object">Object</a>
+        <a href="#process">Process</a>
+        <a href="#essay">Essay</a>
+      </div>
+      <div>
+        <p>Legal</p>
+        <p>Nothing is, legally, nothing. Please do not litigate.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Nothing. All wrongs reserved.</span>
+      <span class="time" id="clock">--:--:--</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
