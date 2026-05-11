@@ -3,25 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nothing — A study in absence</title>
+<title>Nothing</title>
 <meta name="description" content="Nothing. Precisely engineered. Devastatingly empty." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- Grain overlay -->
+<body class="theme-dark lang-en">
   <div class="grain" aria-hidden="true"></div>
-
-  <!-- Custom cursor -->
   <div class="cursor" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
-
-  <!-- WebGL / canvas background -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-  <!-- Scroll progress -->
   <div class="progress-bar" aria-hidden="true"><span></span></div>
 
   <!-- Nav -->
@@ -31,49 +24,57 @@
         <svg viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
           <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1"/>
         </svg>
-        <span>Nothing</span>
+        <span data-i18n="brand">Nothing</span>
       </a>
       <nav class="links">
-        <a href="#manifesto" data-magnetic>Manifesto</a>
-        <a href="#object" data-magnetic>The Object</a>
-        <a href="#process" data-magnetic>Process</a>
-        <a href="#essay" data-magnetic>Essay</a>
-        <a href="#contact" data-magnetic>Reach</a>
+        <a href="#manifesto" data-magnetic data-i18n="nav_manifesto">Manifesto</a>
+        <a href="#object" data-magnetic data-i18n="nav_object">The Object</a>
+        <a href="#process" data-magnetic data-i18n="nav_process">Process</a>
+        <a href="#essay" data-magnetic data-i18n="nav_essay">Essay</a>
+        <a href="#contact" data-magnetic data-i18n="nav_contact">Reach</a>
       </nav>
-      <button class="cta" data-magnetic>
-        <span>Acquire Nothing</span>
-        <span class="cta-arrow">↗</span>
-      </button>
+      <div class="nav-tools">
+        <button class="icon-btn" id="theme-btn" data-magnetic aria-label="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="lang-btn" id="lang-btn" data-magnetic aria-label="Change language">
+          <span id="lang-label">EN</span>
+        </button>
+        <button class="cta" data-magnetic>
+          <span data-i18n="cta">Acquire Nothing</span>
+          <span class="cta-arrow">↗</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
   <section id="top" class="hero">
-    <div class="hero-meta">
+    <div class="hero-meta" data-reveal>
       <span class="dot"></span>
-      <span data-scramble>Volume 01 · Edition of None</span>
+      <span data-scramble data-i18n="hero_meta">Volume 01 / Edition of None</span>
     </div>
     <h1 class="hero-title">
-      <span class="line"><span class="word" data-split>Nothing,</span></span>
-      <span class="line"><span class="word" data-split>precisely</span></span>
-      <span class="line italic"><span class="word" data-split>engineered.</span></span>
+      <span class="line"><span class="word" data-split data-i18n="hero_w1">Nothing,</span></span>
+      <span class="line"><span class="word" data-split data-i18n="hero_w2">precisely</span></span>
+      <span class="line italic"><span class="word" data-split data-i18n="hero_w3">engineered.</span></span>
     </h1>
-    <p class="hero-sub" data-reveal>
-      A long, unwavering meditation on absence. Calibrated to the seventh decimal.
-      Tuned by hand. Confirmed by no one.
+    <p class="hero-sub" data-reveal data-i18n="hero_sub">
+      A long, unwavering meditation on absence. Calibrated to the seventh decimal. Tuned by hand. Confirmed by no one.
     </p>
-    <div class="hero-cta">
+    <div class="hero-cta" data-reveal>
       <button class="primary" data-magnetic>
         <span class="bg"></span>
-        <span class="label">Begin the descent</span>
+        <span class="label" data-i18n="hero_btn">Begin the descent</span>
       </button>
-      <a href="#manifesto" class="ghost" data-magnetic>↓ Or scroll, gently</a>
+      <a href="#manifesto" class="ghost" data-magnetic data-i18n="hero_ghost">↓ Or scroll, gently</a>
     </div>
 
-    <div class="hero-marquee" aria-hidden="true">
+    <div class="hero-marquee" aria-hidden="true" data-reveal>
       <div class="track">
-        <span>Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered · Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered ·</span>
-        <span>Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered · Empty · Quiet · Considered · Negligible · Untouched · Unsaid · Unbothered ·</span>
+        <span data-i18n="marquee">Empty   Quiet   Considered   Negligible   Untouched   Unsaid   Unbothered   Empty   Quiet   Considered   Negligible   Untouched   Unsaid   Unbothered</span>
+        <span data-i18n="marquee">Empty   Quiet   Considered   Negligible   Untouched   Unsaid   Unbothered   Empty   Quiet   Considered   Negligible   Untouched   Unsaid   Unbothered</span>
       </div>
     </div>
   </section>
@@ -82,32 +83,30 @@
   <section id="manifesto" class="manifesto">
     <div class="section-head">
       <span class="num" data-reveal>01</span>
-      <h2 data-reveal>A manifesto for the unremarkable.</h2>
+      <h2 data-reveal data-i18n="m_h">A manifesto for the unremarkable.</h2>
     </div>
     <div class="manifesto-grid">
-      <p data-reveal>
-        We have made too many things. Too many shapes, too many edges, too many promises uttered into rooms that were already full.
-        Nothing is the inverse practice. We sand it down. We sand the sander.
+      <p data-reveal data-i18n="m_p1">
+        We have made too many things. Too many shapes, too many edges, too many promises uttered into rooms that were already full. Nothing is the inverse practice. We sand it down. We sand the sander.
       </p>
-      <p data-reveal>
-        Each surface here is a refusal. Each line a long apology to your retinas.
-        The product, should we ever ship it, will be the absence of itself — gift-wrapped, hand-numbered, sent nowhere.
+      <p data-reveal data-i18n="m_p2">
+        Each surface here is a refusal. Each line a long apology to your retinas. The product, should we ever ship it, will be the absence of itself, gift-wrapped, hand-numbered, sent nowhere.
       </p>
-      <p data-reveal>
+      <p data-reveal data-i18n="m_p3">
         Nothing is not a brand. Nothing is not a movement. Nothing is, at most, a Tuesday afternoon that forgot to introduce itself.
       </p>
     </div>
   </section>
 
-  <!-- Object showcase -->
+  <!-- Object -->
   <section id="object" class="object">
     <div class="section-head">
       <span class="num" data-reveal>02</span>
-      <h2 data-reveal>The Object<span class="italic">,</span> as such.</h2>
+      <h2 data-reveal><span data-i18n="o_h1">The Object</span><span class="italic" data-i18n="o_h2">, as such.</span></h2>
     </div>
 
     <div class="object-stage">
-      <div class="object-shape" data-tilt>
+      <div class="object-shape" data-tilt data-reveal>
         <div class="ring r1"></div>
         <div class="ring r2"></div>
         <div class="ring r3"></div>
@@ -115,53 +114,53 @@
       </div>
       <div class="object-spec">
         <ul>
-          <li><span>Material</span><b data-scramble>Ambient air</b></li>
-          <li><span>Finish</span><b data-scramble>Bare attention</b></li>
-          <li><span>Weight</span><b data-scramble>0.000 g</b></li>
-          <li><span>Capacity</span><b data-scramble>Whatever you bring</b></li>
-          <li><span>Origin</span><b data-scramble>An unobserved Tuesday</b></li>
-          <li><span>Edition</span><b data-scramble>1 of ∅</b></li>
+          <li data-reveal><span data-i18n="spec_l1">Material</span><b data-scramble data-i18n="spec_v1">Ambient air</b></li>
+          <li data-reveal><span data-i18n="spec_l2">Finish</span><b data-scramble data-i18n="spec_v2">Bare attention</b></li>
+          <li data-reveal><span data-i18n="spec_l3">Weight</span><b data-scramble data-i18n="spec_v3">0.000 g</b></li>
+          <li data-reveal><span data-i18n="spec_l4">Capacity</span><b data-scramble data-i18n="spec_v4">Whatever you bring</b></li>
+          <li data-reveal><span data-i18n="spec_l5">Origin</span><b data-scramble data-i18n="spec_v5">An unobserved Tuesday</b></li>
+          <li data-reveal><span data-i18n="spec_l6">Edition</span><b data-scramble data-i18n="spec_v6">1 of ∅</b></li>
         </ul>
-        <p class="caption" data-reveal>
+        <p class="caption" data-reveal data-i18n="o_cap">
           Photographed in a room without light. Calibrated against a wall that was, on reflection, not there.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Horizontal scroll process -->
+  <!-- Process -->
   <section id="process" class="process">
     <div class="section-head sticky-head">
       <span class="num" data-reveal>03</span>
-      <h2 data-reveal>Process<span class="italic">.</span> Or the long way around.</h2>
+      <h2 data-reveal><span data-i18n="p_h1">Process</span><span class="italic" data-i18n="p_h2">. Or the long way around.</span></h2>
     </div>
 
     <div class="hscroll">
       <div class="hscroll-track">
-        <article class="card">
+        <article class="card" data-reveal>
           <span class="card-num">i.</span>
-          <h3>Removal</h3>
-          <p>We begin with a thing and slowly, patiently, take from it. The thing forgives us.</p>
+          <h3 data-i18n="p_c1_t">Removal</h3>
+          <p data-i18n="p_c1_d">We begin with a thing and slowly, patiently, take from it. The thing forgives us.</p>
         </article>
-        <article class="card">
+        <article class="card" data-reveal>
           <span class="card-num">ii.</span>
-          <h3>Quietening</h3>
-          <p>We turn the volume down on the remaining shapes until they hum at the frequency of forgotten dreams.</p>
+          <h3 data-i18n="p_c2_t">Quietening</h3>
+          <p data-i18n="p_c2_d">We turn the volume down on the remaining shapes until they hum at the frequency of forgotten dreams.</p>
         </article>
-        <article class="card">
+        <article class="card" data-reveal>
           <span class="card-num">iii.</span>
-          <h3>Calibration</h3>
-          <p>An engineer in a grey shirt squints at a grey number for a grey afternoon. The number does not change. It is correct.</p>
+          <h3 data-i18n="p_c3_t">Calibration</h3>
+          <p data-i18n="p_c3_d">An engineer in a grey shirt squints at a grey number for a grey afternoon. The number does not change. It is correct.</p>
         </article>
-        <article class="card">
+        <article class="card" data-reveal>
           <span class="card-num">iv.</span>
-          <h3>Disappearance</h3>
-          <p>The piece is removed from itself. What remains is what was always there, only more so.</p>
+          <h3 data-i18n="p_c4_t">Disappearance</h3>
+          <p data-i18n="p_c4_d">The piece is removed from itself. What remains is what was always there, only more so.</p>
         </article>
-        <article class="card">
+        <article class="card" data-reveal>
           <span class="card-num">v.</span>
-          <h3>Delivery</h3>
-          <p>Nothing arrives in a box that did not exist. You open it. It opens you.</p>
+          <h3 data-i18n="p_c5_t">Delivery</h3>
+          <p data-i18n="p_c5_d">Nothing arrives in a box that did not exist. You open it. It opens you.</p>
         </article>
       </div>
     </div>
@@ -169,36 +168,33 @@
 
   <!-- Stats -->
   <section class="stats">
-    <div class="stat" data-reveal><b class="count" data-target="0">0</b><span>Decisions made in haste</span></div>
-    <div class="stat" data-reveal><b class="count" data-target="1042">0</b><span>Hours spent staring</span></div>
-    <div class="stat" data-reveal><b class="count" data-target="7">0</b><span>Materials, none chosen</span></div>
-    <div class="stat" data-reveal><b>∞</b><span>Times we changed our minds</span></div>
+    <div class="stat" data-reveal><b class="count" data-target="0">0</b><span data-i18n="s1">Decisions made in haste</span></div>
+    <div class="stat" data-reveal><b class="count" data-target="1042">0</b><span data-i18n="s2">Hours spent staring</span></div>
+    <div class="stat" data-reveal><b class="count" data-target="7">0</b><span data-i18n="s3">Materials, none chosen</span></div>
+    <div class="stat" data-reveal><b>∞</b><span data-i18n="s4">Times we changed our minds</span></div>
   </section>
 
   <!-- Essay -->
   <section id="essay" class="essay">
     <div class="section-head">
       <span class="num" data-reveal>04</span>
-      <h2 data-reveal>An essay on the absence of essay.</h2>
+      <h2 data-reveal data-i18n="e_h">An essay on the absence of essay.</h2>
     </div>
     <div class="essay-body">
-      <p data-reveal>
-        There is a particular kind of quiet that arrives only after every other sound has politely excused itself.
-        We are interested in that quiet. We are, perhaps, only interested in that quiet.
+      <p data-reveal data-i18n="e_p1">
+        There is a particular kind of quiet that arrives only after every other sound has politely excused itself. We are interested in that quiet. We are, perhaps, only interested in that quiet.
       </p>
-      <p data-reveal>
-        Consider a room. Now consider the room without the room. Now consider what remains, which is, of course, you,
-        and the long fluorescent hum of your own paying attention. That is the work. That is all the work.
+      <p data-reveal data-i18n="e_p2">
+        Consider a room. Now consider the room without the room. Now consider what remains, which is, of course, you, and the long fluorescent hum of your own paying attention. That is the work. That is all the work.
       </p>
       <blockquote data-reveal>
         <span class="quote-mark">“</span>
-        To make Nothing is harder than to make Something. Something has demands. Nothing has only its terrible, quiet patience.
+        <span data-i18n="e_q">To make Nothing is harder than to make Something. Something has demands. Nothing has only its terrible, quiet patience.</span>
         <span class="quote-mark">”</span>
-        <cite>— a person we did not interview</cite>
+        <cite data-i18n="e_cite">by a person we did not interview</cite>
       </blockquote>
-      <p data-reveal>
-        We could go on. In fact, we have been going on, in the next room, for several years now. You are welcome to listen.
-        Bring nothing. We will match it.
+      <p data-reveal data-i18n="e_p3">
+        We could go on. In fact, we have been going on, in the next room, for several years now. You are welcome to listen. Bring nothing. We will match it.
       </p>
     </div>
   </section>
@@ -207,53 +203,53 @@
   <section id="contact" class="contact">
     <div class="contact-inner">
       <h2 data-reveal>
-        <span class="word" data-split>Say</span>
-        <span class="word italic" data-split>nothing,</span>
-        <span class="word" data-split>back.</span>
+        <span class="word" data-split data-i18n="c_w1">Say</span>
+        <span class="word italic" data-split data-i18n="c_w2">nothing,</span>
+        <span class="word" data-split data-i18n="c_w3">back.</span>
       </h2>
-      <p data-reveal>If you must, you may whisper it into the form below. We will not respond. This is the agreement.</p>
+      <p data-reveal data-i18n="c_sub">If you must, you may whisper it into the form below. We will not respond. This is the agreement.</p>
       <form class="form" onsubmit="event.preventDefault(); this.classList.add('sent');">
-        <label>
-          <span>Your name, optional</span>
-          <input type="text" placeholder="—" />
+        <label data-reveal>
+          <span data-i18n="c_l1">Your name, optional</span>
+          <input type="text" placeholder="" />
         </label>
-        <label>
-          <span>Your nothing</span>
-          <textarea rows="4" placeholder="Leave this blank, deliberately."></textarea>
+        <label data-reveal>
+          <span data-i18n="c_l2">Your nothing</span>
+          <textarea rows="4" data-i18n-placeholder="c_ph" placeholder="Leave this blank, deliberately."></textarea>
         </label>
-        <button class="primary" data-magnetic type="submit">
+        <button class="primary" data-magnetic type="submit" data-reveal>
           <span class="bg"></span>
-          <span class="label">Send into the void</span>
+          <span class="label" data-i18n="c_btn">Send into the void</span>
         </button>
-        <p class="sent-msg">Received. Filed under: nothing.</p>
+        <p class="sent-msg" data-i18n="c_sent">Received. Filed under nothing.</p>
       </form>
     </div>
   </section>
 
   <footer class="foot">
     <div class="foot-grid">
-      <div>
-        <p class="foot-logo">Nothing<sup>©</sup></p>
-        <p>An ongoing refusal, since an unspecified date.</p>
+      <div data-reveal>
+        <p class="foot-logo" data-i18n="brand">Nothing<sup>©</sup></p>
+        <p data-i18n="f_tag">An ongoing refusal, since an unspecified date.</p>
       </div>
-      <div>
-        <p>Studio</p>
-        <p>An empty floor, somewhere quiet.</p>
+      <div data-reveal>
+        <p data-i18n="f_studio_l">Studio</p>
+        <p data-i18n="f_studio_v">An empty floor, somewhere quiet.</p>
       </div>
-      <div>
-        <p>Index</p>
-        <a href="#manifesto">Manifesto</a>
-        <a href="#object">Object</a>
-        <a href="#process">Process</a>
-        <a href="#essay">Essay</a>
+      <div data-reveal>
+        <p data-i18n="f_index_l">Index</p>
+        <a href="#manifesto" data-i18n="nav_manifesto">Manifesto</a>
+        <a href="#object" data-i18n="nav_object">Object</a>
+        <a href="#process" data-i18n="nav_process">Process</a>
+        <a href="#essay" data-i18n="nav_essay">Essay</a>
       </div>
-      <div>
-        <p>Legal</p>
-        <p>Nothing is, legally, nothing. Please do not litigate.</p>
+      <div data-reveal>
+        <p data-i18n="f_legal_l">Legal</p>
+        <p data-i18n="f_legal_v">Nothing is, legally, nothing. Please do not litigate.</p>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="year"></span> Nothing. All wrongs reserved.</span>
+      <span><span id="year"></span> <span data-i18n="f_rights">Nothing. All wrongs reserved.</span></span>
       <span class="time" id="clock">--:--:--</span>
     </div>
   </footer>
